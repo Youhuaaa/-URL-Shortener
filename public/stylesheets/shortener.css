@@ -1,0 +1,78 @@
+html,
+body {
+  background: #FCEED0;
+  margin: 0px;
+  color: #324259;
+}
+
+.navbar {
+  background: #F2A383;
+}
+
+.url-shortener {
+  width: 60%;
+  margin: 100px auto;
+  height: 380px;
+  background: #FFFFFF;
+  border: 2px solid #324259;
+  border-radius: 8px;
+}
+
+.box {
+  outline: 1px solid black;
+}
+
+.form-control {
+  border: 2px solid #324259;
+}
+
+.form-control:focus {
+  border: 2px solid #F2A383;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+  outline: 0 none;
+}
+
+.btn-confirm {
+  background: #FCEED0;
+  border: 2px solid #324259;
+  font-weight: 500;
+}
+
+.btn-confirm:hover {
+  background: fixed #F2A383;
+  color: white;
+  border: 2px solid #324259;
+  font-weight: 500;
+}
+
+.url-input {
+  width: 400px;
+}
+
+::placeholder {
+  color: #C9C9C9;
+}
+
+.title {
+  margin-top: 100px;
+}
+
+.result {
+  color: #F2A383;
+  font-size: 16px;
+}
+
+.btn-copy {
+  border: none;
+  border-radius: 8px;
+  width: 60px;
+  height: 25px;
+  color: #676767;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.btn-copy:hover {
+  background-color: #676767;
+  color: #ffffff;
+}

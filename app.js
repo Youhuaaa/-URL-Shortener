@@ -4,6 +4,7 @@ const port = 3000
 const app = express()
 
 // require handlebars
+app.use(express.static('public'))
 const handlebars = require('express-handlebars')
 app.set('view engine', 'handlebars')
 app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }))
