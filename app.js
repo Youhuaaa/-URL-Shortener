@@ -13,6 +13,9 @@ app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }))
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 
+// create shortened url
+const generateURL = require('./public/javascripts/shortener.js')
+
 // db connection
 require('./config/mongoose.js')
 
