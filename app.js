@@ -6,11 +6,17 @@ const app = express()
 // require handlebars
 const handlebars = require('express-handlebars')
 app.set('view engine', 'handlebars')
-app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}))
+app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }))
 
 // middleware
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
+
+// db connection
+require('./config/mongoose.js')
+
+// require mongoose model Record
+const Record = require('./models/record.js')
 
 // setting routes
 app.get('/', (req, res) => {
