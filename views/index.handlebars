@@ -1,12 +1,15 @@
 <div class="container-fluid url-shortener d-flex flex-column align-items-center">
   <h3 class="title mb-3">輸入想要縮短的網址：</h3>
-  <form class="d-flex flex-row">
+  <form class="d-flex flex-row" method="POST" action="/record">
     <div class="mb-3 me-3 url-input">
-      <input type="email" class="form-control mb-3" placeholder="https://example...">
+      <input type="url" class="form-control mb-3" {{#if url}}value="{{url}}" {{/if}} placeholder="https://example..."
+        name="url" required>
       <div class="d-flex align-items-center">
+        {{#if shortenedURL}}
         <span class="result">短網址：</span>
-        <span class="result">https://herokuapp.com/6y7UP</span>
+        <span class="result">{{shortenedURL}}</span>
         <button class="btn-copy ms-3">複製</button>
+        {{/if}}
       </div>
     </div>
     <div class="d-flex flex-column">

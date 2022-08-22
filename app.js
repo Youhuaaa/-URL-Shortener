@@ -27,6 +27,21 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.post('/record', (req, res) => {
+  // Get shortened URL
+  let shortenedURL = generateURL()
+
+  // Create URL
+  let url = req.body.url
+  console.log(url)
+  Record.create({
+    original_url: url,
+    shortened_url: shortenedURL
+  })
+    .then(res.render('index', { url: url, shortenedURL: shortenedURL }))
+    .catch(error => console.log(error))
+})
+
 app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`)
 })
