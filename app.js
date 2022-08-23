@@ -14,7 +14,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 
 // create shortened url
-const generateURL = require('./public/javascripts/shortener.js')
+const generateUrl = require('./public/javascripts/shorten.js')
 
 // db connection
 require('./config/mongoose.js')
@@ -28,18 +28,28 @@ app.get('/', (req, res) => {
 })
 
 app.post('/record', (req, res) => {
-  // Get shortened URL
-  let shortenedURL = generateURL()
-
-  // Create URL
   let url = req.body.url
-  console.log(url)
-  Record.create({
-    original_url: url,
-    shortened_url: shortenedURL
-  })
-    .then(res.render('index', { url: url, shortenedURL: shortenedURL }))
-    .catch(error => console.log(error))
+  Record.find()
+    .lean()
+    .then(urlList => {
+      existedUrl = urlList.find(element => element.original_url === url)
+      if (existedUrl) {
+        return res.render('index', { url: existedUrl.original_url, shortened_url: existedUrl.shortened_url })
+      }
+      let shortenedURL = generateUrl()
+      while (urlList.some(element => element.shortened_url === shortenedURL)) {
+        shortenedURL = generateUrl()
+      }
+
+      return Record.create({
+        original_url: url,
+        shortened_url: shortenedURL
+      })
+        .then(res.render('index', { url: url, shortened_url: shortenedURL }))
+        .catch(error => console.log(error))
+
+    })
+
 })
 
 app.listen(port, () => {

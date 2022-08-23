@@ -5,9 +5,9 @@
       <input type="url" class="form-control mb-3" {{#if url}}value="{{url}}" {{/if}} placeholder="https://example..."
         name="url" required>
       <div class="d-flex align-items-center">
-        {{#if shortenedURL}}
+        {{#if shortened_url}}
         <span class="result">短網址：</span>
-        <span class="result">{{shortenedURL}}</span>
+        <span class="result">{{shortened_url}}</span>
         <button class="btn-copy ms-3">複製</button>
         {{/if}}
       </div>
