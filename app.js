@@ -1,6 +1,6 @@
 // require express
 const express = require('express')
-const port = 3000
+const PORT = process.env.PORT || 3000
 const app = express()
 
 // require handlebars
@@ -52,6 +52,20 @@ app.post('/record', (req, res) => {
 
 })
 
-app.listen(port, () => {
-  console.log(`Express is listening on localhost:${port}`)
+app.get('/example/:shortUrl', (req, res) => {
+  let shortUrl = 'https:/example/' + req.params.shortUrl
+  console.log(shortUrl)
+  Record.findOne({ shortened_url: shortUrl })
+    .lean()
+    .then(relink => {
+      if (relink) {
+        console.log(relink)
+        res.status(301).redirect(relink.original_url)
+      }
+    })
+    .catch(() => { res.sendStatus(404) })
+})
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Express is listening on localhost:${PORT}`)
 })
