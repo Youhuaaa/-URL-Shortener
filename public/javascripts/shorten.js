@@ -4,7 +4,7 @@ const numbers = '1234567890'
 const collection = lowerCaseLetters + upperCaseLetters + numbers
 
 function generateUrl() {
-  let result = 'https:/example/'
+  let result = 'polar-brook-24262.herokuapp.com/:shortUrl/'
   for (let i = 0; i < 5; i++) {
     let index = Math.floor(Math.random() * [...collection].length)
     result += collection[index]

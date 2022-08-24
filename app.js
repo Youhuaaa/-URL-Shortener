@@ -52,7 +52,7 @@ app.post('/record', (req, res) => {
 
 })
 
-app.get('polar-brook-24262.herokuapp.com/:shortUrl', (req, res) => {
+app.get('/:shortUrl', (req, res) => {
   let shortUrl = 'https://polar-brook-24262.herokuapp.com/' + req.params.shortUrl
   console.log(shortUrl)
   Record.findOne({ shortened_url: shortUrl })
