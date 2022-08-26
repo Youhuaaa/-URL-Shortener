@@ -52,6 +52,7 @@ app.post('/record', (req, res) => {
 
 })
 
+
 app.get('/:shortUrl', (req, res) => {
   let shortUrl = 'polar-brook-24262.herokuapp.com/' + req.params.shortUrl
   console.log(shortUrl)
