@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // create shortened url
 const generateUrl = require('./public/javascripts/shorten.js')
+const mainURL = PORT === 3000 ? 'localhost:3000/' : 'youhua-reurl.herokuapp.com/'
 
 // db connection
 require('./config/mongoose.js')
@@ -22,19 +23,23 @@ require('./config/mongoose.js')
 // require mongoose model Record
 const Record = require('./models/record.js')
 
+
+
 // setting routes
 app.get('/', (req, res) => {
   res.render('index')
+  console.log(mainURL)
 })
 
 app.post('/record', (req, res) => {
   let url = req.body.url
+
   Record.find()
     .lean()
     .then(urlList => {
       existedUrl = urlList.find(element => element.original_url === url)
       if (existedUrl) {
-        return res.render('index', { url: existedUrl.original_url, shortened_url: existedUrl.shortened_url })
+        return res.render('index', { url: existedUrl.original_url, shortened_url: existedUrl.shortened_url, mainURL: mainURL })
       }
       let shortenedURL = generateUrl()
       while (urlList.some(element => element.shortened_url === shortenedURL)) {
@@ -45,7 +50,7 @@ app.post('/record', (req, res) => {
         original_url: url,
         shortened_url: shortenedURL
       })
-        .then(res.render('index', { url: url, shortened_url: shortenedURL }))
+        .then(res.render('index', { url: url, shortened_url: shortenedURL, mainURL: mainURL }))
         .catch(error => console.log(error))
 
     })
@@ -54,7 +59,7 @@ app.post('/record', (req, res) => {
 
 
 app.get('/:shortUrl', (req, res) => {
-  let shortUrl = 'youhua-reurl.herokuapp.com/' + req.params.shortUrl
+  let shortUrl = req.params.shortUrl
   console.log(shortUrl)
   Record.findOne({ shortened_url: shortUrl })
     .lean()
