@@ -28,7 +28,6 @@ const Record = require('./models/record.js')
 // setting routes
 app.get('/', (req, res) => {
   res.render('index')
-  console.log(mainURL)
 })
 
 app.post('/record', (req, res) => {

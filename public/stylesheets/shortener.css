@@ -9,20 +9,12 @@ body {
   background: #F2A383;
 }
 
-.url-shortener {
-  width: 50%;
-  margin: 100px auto;
-  height: 380px;
-  background: #FFFFFF;
-  border: 2px solid #324259;
-  border-radius: 8px;
-}
-
 .box {
   outline: 1px solid black;
 }
 
 .form-control {
+  width: 95%;
   border: 2px solid #324259;
 }
 
@@ -32,29 +24,12 @@ body {
   outline: 0 none;
 }
 
-.btn-confirm {
-  background: #FCEED0;
-  border: 2px solid #324259;
-  font-weight: 500;
-}
-
-.btn-confirm:hover {
-  background: fixed #F2A383;
-  color: white;
-  border: 2px solid #324259;
-  font-weight: 500;
-}
-
 .url-input {
-  width: 430px;
+  width: 80%;
 }
 
 ::placeholder {
   color: #C9C9C9;
-}
-
-.title {
-  margin-top: 100px;
 }
 
 .result {
@@ -75,4 +50,71 @@ body {
 .btn-copy:hover {
   background-color: #676767;
   color: #ffffff;
+}
+
+.btn-confirm {
+  background: #FCEED0;
+  border: 2px solid #324259;
+  font-weight: 500;
+}
+
+.btn-confirm:hover {
+  background: fixed #F2A383;
+  color: white;
+  border: 2px solid #324259;
+  font-weight: 500;
+}
+
+.short-url-block {
+  width: 280px;
+}
+
+@media (max-width: 700px) {
+  .url-shortener {
+    width: 90%;
+    margin: 60px auto;
+    height: 380px;
+    background: #FFFFFF;
+    border: 2px solid #324259;
+    border-radius: 8px;
+  }
+
+  .title {
+    margin-top: 50px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .confirm-block {
+    width: 30%;
+  }
+
+  .url-input {
+    width: 70%;
+  }
+}
+
+@media(min-width: 700px) {
+  .url-shortener {
+    width: 50%;
+    margin: 100px auto;
+    height: 380px;
+    background: #FFFFFF;
+    border: 2px solid #324259;
+    border-radius: 8px;
+  }
+
+  .title {
+    margin-top: 100px;
+  }
+
+  form {
+    width: 80%;
+  }
+
+  .confirm-block {
+    width: 20%;
+  }
 }

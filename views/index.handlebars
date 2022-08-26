@@ -4,7 +4,7 @@
     <div class="mb-3 me-3 url-input">
       <input type="url" class="form-control mb-3" {{#if url}}value="{{url}}" {{/if}} placeholder="https://example..."
         name="url" required>
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center short-url-block">
         {{#if shortened_url}}
         <span class="result">短網址：</span>
         <span class="result text-area">{{mainURL}}{{shortened_url}}</span>
@@ -12,7 +12,7 @@
         {{/if}}
       </div>
     </div>
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column confirm-block">
       <button type="submit" class="btn btn-confirm mb-3">確定</button>
     </div>
   </form>
