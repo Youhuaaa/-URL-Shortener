@@ -1,6 +1,6 @@
 <div class="container-fluid url-shortener d-flex flex-column align-items-center">
   <h3 class="title mb-3">輸入想要縮短的網址：</h3>
-  <form class="d-flex flex-row" method="POST" action="/record">
+  <form class="d-flex flex-row" id="form" method="POST" action="/record" novalidate>
     <div class="mb-3 me-3 url-input">
       <input type="url" class="form-control mb-3" {{#if url}}value="{{url}}" {{/if}} placeholder="https://example..."
         name="url" required>

@@ -10,5 +10,3 @@ const copyToClipBoard = function () {
 }
 
 
-
-
