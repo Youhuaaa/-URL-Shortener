@@ -95,6 +95,21 @@ body {
   .short-url-block {
     width: 280px;
   }
+
+  .btn-copy {
+    border: none;
+    border-radius: 8px;
+    width: 100px;
+    height: 25px;
+    color: #676767;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .btn-copy:hover {
+    background-color: #676767;
+    color: #ffffff;
+  }
 }
 
 @media(min-width: 700px) {
