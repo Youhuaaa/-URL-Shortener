@@ -4,11 +4,13 @@
     <div class="mb-3 me-3 url-input">
       <input type="url" class="form-control mb-3" {{#if url}}value="{{url}}" {{/if}} placeholder="https://example..."
         name="url" required>
-      <div class="d-flex align-items-center short-url-block">
+      <div class="d-flex flex-column align-items-start short-url-block">
         {{#if shortened_url}}
-        <span class="result">短網址：</span>
-        <span class="result text-area">{{mainURL}}{{shortened_url}}</span>
-        <button class="btn-copy ms-3" onclick="copyToClipBoard()">複製</button>
+        <div class="m-o p-0">
+          <span class="result">短網址：</span>
+          <span class="result text-area">{{mainURL}}{{shortened_url}}</span>
+        </div>
+        <button class="btn-copy mt-2" onclick="copyToClipBoard()">複製</button>
         {{/if}}
       </div>
     </div>

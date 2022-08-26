@@ -93,13 +93,13 @@ body {
   }
 
   .short-url-block {
-    width: 280px;
+    width: 150%;
   }
 
   .btn-copy {
     border: none;
     border-radius: 8px;
-    width: 100px;
+    width: 60px;
     height: 25px;
     color: #676767;
     font-size: 12px;
