@@ -8,8 +8,8 @@
 4. 資料庫記錄使用者曾經輸入的原始網址，再次貼上相同網址時，可得到「與過去相同的短網址」
 
 ### 如何使用
-Method 1: 此專案已上傳至遠端 Heroku，在 Server 開啟期間，可直接前往「https://youhua-reurl.herokuapp.com/」使用產品
-Method 2: 從 Github 中下載到本地端進行使用，並且在 Terminal 中下指令「npm run dev」即可使用
+- Method 1: 此專案已上傳至遠端 Heroku，在 Server 開啟期間，可直接前往「https://youhua-reurl.herokuapp.com/」使用產品
+- Method 2: 從 Github 中下載到本地端進行使用，並且在 Terminal 中下指令「npm run dev」即可使用
   - `npm run dev` 可直接在本地端開啟產品使用，並且即時在程式碼中更改，也能收到回饋
   - `npm run start` 也可直接在本地端開啟產品使用，但在程式碼中的即時更改不會影響到網頁
   - `heroku open` 可開啟遠端的 Heroku Server，並且可以提供 Method1 中的網址直接供他人使用
